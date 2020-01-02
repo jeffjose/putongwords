@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 
+import os
 import hug
 from urllib import parse
 
 import falcon
 import pathlib
 
-ALIASES = pathlib.Path('aliases')
+if 'PYTEST_RUNNING' in os.environ:
+    ALIASES = pathlib.Path('test/mockaliases')
+else:
+    ALIASES = pathlib.Path('aliases')
 
 data = {}
 RESPONSE_TEMPLATE = '''
@@ -28,7 +32,8 @@ def find(shortlink):
 def redirect_handler(request, response):
     """Main shortlink handler"""
 
-    shortlink = request.path.lstrip('/')
+    shortlink = request.path.strip('/')
+    print(f'{shortlink}')
 
     link = find(shortlink)
 
@@ -59,7 +64,7 @@ def redirect(response, destination):
     response.body = RESPONSE_TEMPLATE.format(destination=fulldestination)
 
 
-def read_db():
+def read_db(filepath=ALIASES):
     """
     Reads all linkdata from the file
     """
@@ -71,14 +76,12 @@ def read_db():
     # Output
     #  [{'shortlink': 'g', 'destination': 'google.com'}]
     #
-    lines = filter(None, ALIASES.read_text().split('\n'))
+    lines = filter(None, filepath.read_text().split('\n'))
 
     for line in lines:
         [shortlink, destination] = line.split(' ')
 
-        # root path "/" is internally represented as ""
-        if shortlink == '/':
-            shortlink = ''
+        shortlink = shortlink.strip('/')
 
         data[shortlink] = {'shortlink': shortlink, 'destination': destination}
 
