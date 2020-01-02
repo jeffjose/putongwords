@@ -17,9 +17,12 @@
 
 # Users going to putongwords.com -> putongwords.substack.com
 #
+################################ ADD BELOW #####################################################
 
 / putongwords.substack.com
+
 /add https://github.com/putongwords/putongwords/blob/master/aliases
+/new https://github.com/putongwords/putongwords/blob/master/aliases
 
 /sub   https://putongwords.substack.com/subscribe
 
