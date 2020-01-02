@@ -36,12 +36,14 @@ def redirect_handler(request, response):
 
     link = find(shortlink)
 
-    print(f'[putongwords]: {request.path} -> {link["destination"]}')
-
     if request.method == 'GET' and link:
+        print(f'[putongwords]: {request.path} -> {link["destination"]}')
         return redirect(response, link['destination'])
     else:
-        pass
+        print(
+            f'[putongwords]: No entry for {request.path}, redirecting to putongwords.com'
+        )
+        return redirect(response, 'putongwords.com')
 
 
 def redirect(response, destination):
