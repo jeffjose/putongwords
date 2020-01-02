@@ -33,9 +33,10 @@ def redirect_handler(request, response):
     """Main shortlink handler"""
 
     shortlink = request.path.strip('/')
-    print(f'{shortlink}')
 
     link = find(shortlink)
+
+    print(f'[putongwords]: {request.path} -> {link["destination"]}')
 
     if request.method == 'GET' and link:
         return redirect(response, link['destination'])
