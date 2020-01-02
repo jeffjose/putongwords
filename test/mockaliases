@@ -6,3 +6,8 @@ c/ c.com
 //e e.com
 f// f.com
 //g// g.com
+
+a/b a.com/b
+a/b/c a.com/b/c
+a/b/d a.com/b/fixed/d
+
