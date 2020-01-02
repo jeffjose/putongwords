@@ -1,1 +1,26 @@
-/ putongwords.com
+# Aliases for putongwords.com
+#
+# Format -
+#
+#   shortlink destination
+#
+# Example -
+#   /sub https://putongwords.substack.com/subscribe
+#
+#   This means users visiting putongwords.com/sub will be redirected to https://putongwords.substack.com/subscribe
+#
+# Alternate forms (following three are the same)
+#
+#   sub   https://putongwords.substack.com/subscribe
+#   /sub  https://putongwords.substack.com/subscribe
+#   /sub/ https://putongwords.substack.com/subscribe
+
+# Users going to putongwords.com -> putongwords.substack.com
+#
+
+/ putongwords.substack.com
+
+# Newsletters
+#
+/ep/0 https://putongwords.substack.com/p/coming-soon-68d
+/ep/1 https://putongwords.substack.com/p/-ptng-ordinary-and-common
