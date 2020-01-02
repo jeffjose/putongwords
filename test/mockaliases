@@ -11,3 +11,23 @@ a/b a.com/b
 a/b/c a.com/b/c
 a/b/d a.com/b/fixed/d
 
+    aa a.com
+   /bb b.com
+   cc/ c.com
+  /dd/ d.com
+  //ee e.com
+  ff// f.com
+//gg// g.com
+
+
+aaa     a.com
+/bbb    b.com
+ccc/    c.com
+/ddd/   d.com
+//eee   e.com
+fff//   f.com
+//ggg// g.com
+
+    aa/b a.com/b
+ aa/bb/c a.com/b/c
+aa/bbb/d a.com/b/fixed/d

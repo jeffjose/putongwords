@@ -76,9 +76,14 @@ def read_db(filepath=ALIASES):
     # Output
     #  [{'shortlink': 'g', 'destination': 'google.com'}]
     #
-    lines = filter(None, filepath.read_text().split('\n'))
+    lines = filter(lambda x: x and not x.startswith('#'),
+                   filepath.read_text().split('\n'))
 
     for line in lines:
+
+        # Remove extra spaces
+        line = " ".join(line.split())
+
         [shortlink, destination] = line.split(' ')
 
         shortlink = shortlink.strip('/')
