@@ -12,10 +12,10 @@ shortlink destination
 ```
 /sub https://putongwords.substack.com/subscribe
 ```
-
 This means users visiting putongwords.com/sub will be redirected to https://putongwords.substack.com/subscribe
 
 **Alternate forms**
+
 Following three are the same
 
 ```
