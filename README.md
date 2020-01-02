@@ -7,7 +7,7 @@
 shortlink destination
 ```
 
-**Example**
+**An example**
 
 ```
 /sub https://putongwords.substack.com/subscribe
